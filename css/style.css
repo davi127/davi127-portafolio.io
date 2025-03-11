@@ -43,6 +43,35 @@ ul{
     display: block;
     padding: 0 30px;
     opacity: 1;
+    position: fixed;
+    left: 270px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.section.back-section
+{
+    z-index: 1;
+}
+.section.active
+{
+    z-index: 2;
+    opacity: 1;
+    animation: slideSection 1s ease;
+}
+@keyframes slideSection
+{
+    0%
+    {
+        transform: translateX(100%);
+    }
+    100%
+    {
+        transform: translateX(0%);
+    }
 }
 .hidden{
     display: none !important;
@@ -87,9 +116,7 @@ ul{
     left: 0;
     margin-top: 8px;
 }
-.main-content{
-    padding-left: 270px;
-}
+
 .padd-15{
     padding-left: 14px;
     padding-right: 15px;
@@ -139,6 +166,7 @@ ul{
     justify-content: center;
     align-items: center;
     z-index: 10;
+    transition: all 0.5s ease;
 }
 .aside .logo
 {
@@ -194,6 +222,7 @@ ul{
     display: none;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s ease;
 }
 .aside .nav-toggler span{
     height: 2px;
@@ -201,6 +230,9 @@ ul{
     background: var(--skin-color);
     display: inline-block;
     position: relative;
+}
+.aside .nav-toggler.open span{
+    background-color: transparent;
 }
 .aside .nav-toggler span::before{
     content: '';
@@ -211,6 +243,10 @@ ul{
     top: -6px;
     left: 0;
 }
+.aside .nav-toggler.open span::before{
+    transform: rotate(45deg);
+    top:0;
+}
 .aside .nav-toggler span::after{
     content: '';
     height: 2px;
@@ -219,6 +255,10 @@ ul{
     position: absolute;
     top: 6px;
     left: 0;
+}
+.aside .nav-toggler.open span::after{
+    transform: rotate(-45deg);
+    top:0;
 }
 /* Menú de navegación */
 .aside .nav {
@@ -375,7 +415,6 @@ h3.my-profession{
     margin-top: 30px;
 }
 .about .about-content .personal-info .buttons .btn{
-    margin-right: 15px;
     margin-top: 10px;
 }
 
@@ -526,7 +565,7 @@ h3.my-profession{
     transition:  all 0.3s ease;
 }
 .service .service-item .service-item-inner:hover{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    box-shadow: 0 0 30px rgba(24, 23, 38, 0.15);
 }
 .service .service-item .service-item-inner .icon{
     height: 60px;
@@ -668,9 +707,34 @@ h3.my-profession{
 }
 @media (max-width:1199px)
 {
+    .section .container
+    {
+        padding-top: 70px;
+    }
     .aside
     {
         left: -270px;
+    }
+    .aside.open
+    {
+        left: 0;
+    }
+    .aside .nav-toggler
+    {
+        display: flex;  
+        left: 30px;
+    }
+    .aside .nav-toggler.open
+    {
+        left: 300px;
+    }
+    .section
+    {
+        left: 0;
+    }
+    .section.aside.open
+    {
+        left: 270px;
     }
     .main-content
     {
