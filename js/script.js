@@ -30,7 +30,6 @@ const nav = document.querySelector(".nav"),
             if(navlist[j].querySelector("a").classList.contains("active"))
             {
                 addBackSection(j);
-                // allSection[j].classList.add("back-section");
             }
             navlist[j].querySelector("a").classList.remove("active");
         }
