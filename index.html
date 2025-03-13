@@ -425,24 +425,25 @@
 
                     <!--ContactO form-->
                     <div class="row">
-                        <div class="contact-form padd-15">
+
+                        <form class="contact-form padd-15" action="https://formsubmit.co/oreanticona@hotmail.com" method="POST">
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nombre">
+                                        <input type="text" class="form-control" placeholder="Nombre" required name="name">
                                     </div>
                                 </div>
 
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input type="email" class="form-control" placeholder="Email" required name="email">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Asunto">
+                                        <input type="text" class="form-control" placeholder="Asunto" required name="subject">
                                     </div>
                                 </div>
                             </div>
@@ -450,7 +451,7 @@
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                        <textarea name="" class="form-control" id="mensajes" placeholder="Mensaje"></textarea>
+                                        <textarea name="" class="form-control" id="mensajes" placeholder="Mensaje" required name="comments"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -460,7 +461,8 @@
                                     <button type="submit" class="btn">Enviar Mensaje</button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
+
                     </div>
                 </div>
             </section>
